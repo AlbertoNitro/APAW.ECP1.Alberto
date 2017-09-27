@@ -25,4 +25,16 @@ public class Car {
     public String getRegistration() {
         return registration;
     }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setRegistration(String registration) {
+        this.registration = registration;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
+    }
 }
