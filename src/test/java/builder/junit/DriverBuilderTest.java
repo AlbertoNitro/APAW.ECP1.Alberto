@@ -18,40 +18,40 @@ public class DriverBuilderTest {
     @Before
     public void before() {
         this.car = new Car(1, "Madrid", "Renault Megane");
-        this.driver = new DriverBuilder(1, Level.BEGINNER, car).build();
+        this.driver = new DriverBuilder().id(1).car(car).level(Level.EXPERT).phone(665129265).reference("AJGM").build();
     }
 
     @Test
     public void testDriverBuilder() {
-        assertEquals(Level.BEGINNER, driver.getLevel());
-        assertEquals(1, driver.getId());
+        this.driver = new DriverBuilder().id(4).car(car).build();
+        assertEquals(4, driver.getId());
         assertEquals(car, driver.getCar());
-        this.driver = new DriverBuilder(1, Level.BEGINNER, car).level(Level.EXPERT).phone(665129265).reference("AJGM").build();
-        assertEquals(Level.EXPERT, driver.getLevel());
-        assertEquals(665129265, driver.getPhone());
-        assertEquals("AJGM", driver.getReference());
+        assertEquals(Level.BEGINNER, driver.getLevel());
     }
 
     @Test
+    public void testId() {
+        assertEquals(1, driver.getId());
+    }
+    
+    @Test
     public void testPhone() {
-        this.driver = new DriverBuilder(1, Level.BEGINNER, car).level(Level.EXPERT).phone(665129265).reference("AJGM").build();
         assertEquals(665129265, driver.getPhone());
     }
 
     @Test
     public void testReference() {
-        this.driver = new DriverBuilder(1, Level.BEGINNER, car).level(Level.EXPERT).phone(665129265).reference("AJGM").build();
         assertEquals("AJGM", driver.getReference());
     }
 
     @Test
     public void testLevel() {
-        assertEquals(Level.BEGINNER, driver.getLevel());
+        assertEquals(Level.EXPERT, driver.getLevel());
     }
 
     @Test
     public void testCar() {
-        assertEquals(car, driver.getCar());
+        assertEquals(this.car, driver.getCar());
     }
 
 }

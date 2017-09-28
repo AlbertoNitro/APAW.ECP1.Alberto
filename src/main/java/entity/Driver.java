@@ -12,19 +12,11 @@ public class Driver {
 
     private Car car;
 
-    public Driver(int id, Level level, Car car) {
+    public Driver(int id) {
         this.id = id;
-        this.level = level;
-        this.car = car;
+        this.level = Level.BEGINNER;
+        this.car = null;
     }
-    
-    public Driver(int id, String reference, long phone, Level level, Car car) {
-        this.id = id;
-        this.reference = reference;
-        this.phone = phone;
-        this.level = level;
-        this.car = car;
-    }    
 
     public int getId() {
         return id;
