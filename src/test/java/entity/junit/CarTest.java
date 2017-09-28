@@ -9,7 +9,7 @@ import entity.Car;
 
 public class CarTest {
     private Car car;
-
+    
     @Before
     public void before() {
         this.car = new Car(1, "Madrid", "Renault Megane");
@@ -35,6 +35,24 @@ public class CarTest {
     @Test
     public void testGetRegistration() {
         assertEquals("Madrid", this.car.getRegistration());
+    }
+
+    @Test
+    public void testSetId() {
+        this.car.setId(77);
+        assertEquals(77, this.car.getId());
+    }
+
+    @Test
+    public void testSetRegistration() {
+        this.car.setRegistration("Barcelona");
+        assertEquals("Barcelona", this.car.getRegistration());
+    }
+
+    @Test
+    public void testSetModel() {
+        this.car.setModel("Renault Clio");
+        assertEquals("Renault Clio", this.car.getModel());
     }
 
 }
