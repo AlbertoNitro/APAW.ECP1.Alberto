@@ -17,21 +17,25 @@ public class DriverTest {
     @Before
     public void before() {
         this.car = new Car(1, "Madrid", "Renault Megane");
-        this.driver = new Driver(1, "AJGM", 665129265, Level.EXPERT, this.car);
+        this.driver = new Driver(22);
+        this.driver.setReference("AJGM");
+        this.driver.setPhone(665129265);
     }
 
     @Test
     public void testDriver() {
-        assertEquals(1, this.driver.getId());
+        assertEquals(22, this.driver.getId());
         assertEquals("AJGM", this.driver.getReference());
         assertEquals(665129265, this.driver.getPhone());
-        assertEquals(Level.EXPERT, this.driver.getLevel());
-        assertEquals(this.car, this.driver.getCar());
+        assertEquals(Level.BEGINNER, this.driver.getLevel());
+        assertEquals(null, this.driver.getCar());
     }
 
     @Test
     public void testGetId() {
-        assertEquals(1, this.driver.getId());
+        assertEquals(22, this.driver.getId());
+        this.driver.setId(55);
+        assertEquals(55, this.driver.getId());
     }
 
     @Test
@@ -46,11 +50,13 @@ public class DriverTest {
 
     @Test
     public void testGetLevel() {
-        assertEquals(Level.EXPERT, this.driver.getLevel());
+        this.driver.setLevel(Level.NORMAL);
+        assertEquals(Level.NORMAL, this.driver.getLevel());
     }
 
     @Test
     public void testGetCar() {
+        this.driver.setCar(this.car);
         assertEquals(this.car, this.driver.getCar());
     }
 
