@@ -8,10 +8,8 @@ public class Car {
 
     private String model;
 
-    public Car(int id, String registration, String model) {
+    public Car(int id) {
         this.id = id;
-        this.registration = registration;
-        this.model = model;
     }
 
     public String getModel() {

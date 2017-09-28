@@ -12,7 +12,9 @@ public class CarTest {
     
     @Before
     public void before() {
-        this.car = new Car(1, "Madrid", "Renault Megane");
+        this.car = new Car(1);
+        this.car.setModel("Renault Megane");
+        this.car.setRegistration("Madrid");
     }
 
     @Test
