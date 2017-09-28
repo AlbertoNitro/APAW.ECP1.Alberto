@@ -16,7 +16,9 @@ public class DriverTest {
 
     @Before
     public void before() {
-        this.car = new Car(1, "Madrid", "Renault Megane");
+        this.car = new Car(1);
+        this.car.setModel("Renault Megane");
+        this.car.setRegistration("Madrid");
         this.driver = new Driver(22);
         this.driver.setReference("AJGM");
         this.driver.setPhone(665129265);
