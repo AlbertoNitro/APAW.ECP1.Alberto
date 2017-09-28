@@ -23,6 +23,14 @@ public class DriverBuilderTest {
     }
 
     @Test
+    public void testDriverBuilderInt() {
+        this.driver = new DriverBuilder(4).car(car).build();
+        assertEquals(4, driver.getId());
+        assertEquals(car, driver.getCar());
+        assertEquals(Level.BEGINNER, driver.getLevel());
+    }
+    
+    @Test
     public void testDriverBuilder() {
         this.driver = new DriverBuilder().id(4).car(car).build();
         assertEquals(4, driver.getId());
