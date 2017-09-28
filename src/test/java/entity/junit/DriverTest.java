@@ -5,6 +5,7 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import builder.CarBuilder;
 import entity.Car;
 import entity.Driver;
 import entity.Level;
@@ -16,9 +17,7 @@ public class DriverTest {
 
     @Before
     public void before() {
-        this.car = new Car(1);
-        this.car.setModel("Renault Megane");
-        this.car.setRegistration("Madrid");
+        this.car = new CarBuilder().id(1).model("Renault Megane").registration("Madrid").build();
         this.driver = new Driver(22);
         this.driver.setReference("AJGM");
         this.driver.setPhone(665129265);
