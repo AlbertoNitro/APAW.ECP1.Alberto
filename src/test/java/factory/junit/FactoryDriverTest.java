@@ -1,4 +1,4 @@
-package factory;
+package factory.junit;
 
 import static org.junit.Assert.*;
 
@@ -10,6 +10,7 @@ import builder.DriverBuilder;
 import entity.Car;
 import entity.Driver;
 import entity.Level;
+import factory.FactoryDriver;
 
 public class FactoryDriverTest {
     private FactoryDriver factoryDriver;
@@ -20,9 +21,10 @@ public class FactoryDriverTest {
 
     @Before
     public void before() {
-        this.factoryDriver = new FactoryDriver();
+        this.factoryDriver = FactoryDriver.getFactoryDriver();
         this.car = new CarBuilder().id(1).model("Renault Megane").registration("Madrid").build();
         this.driver = new DriverBuilder().id(1).car(this.car).level(Level.EXPERT).phone(665129265).reference("AJGM").build();
+        this.factoryDriver.clear();
         factoryDriver.almacenate(this.driver);
     }
 
@@ -42,6 +44,18 @@ public class FactoryDriverTest {
         assertTrue(factoryDriver.search(this.driver));
         Driver driver = new DriverBuilder().id(3).car(this.car).build();
         assertFalse(factoryDriver.search(driver));
+    }
+
+    @Test
+    public void testSize() {
+        assertEquals(1, this.factoryDriver.size());
+    }
+
+    @Test
+    public void testClear() {
+        assertEquals(1, this.factoryDriver.size());
+        this.factoryDriver.clear();
+        assertEquals(0, this.factoryDriver.size());
     }
 
 }
