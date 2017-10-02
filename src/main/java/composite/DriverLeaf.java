@@ -14,12 +14,12 @@ public class DriverLeaf extends DriverComponent {
 
     @Override
     public void addDriver(DriverComponent driverComponent) {
-        // Do nothing because is leaf
+        // Do nothing 
     }
 
     @Override
     public void deleteDriver(DriverComponent driverComponent) {
-        // Do nothing because is leaf
+        // Do nothing
     }
 
     @Override
@@ -30,6 +30,16 @@ public class DriverLeaf extends DriverComponent {
     @Override
     public boolean isComposite() {
         return false;
+    }
+
+    @Override
+    public int size() {     
+        return 0;
+    }
+    
+    @Override
+    public String getViewMessage() {
+        return String.valueOf(this.driver.getId());
     }
 
 }

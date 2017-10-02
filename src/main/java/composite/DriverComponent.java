@@ -8,5 +8,9 @@ public abstract class DriverComponent {
     public abstract void view();
 
     public abstract boolean isComposite();
+    
+    public abstract int size();
+    
+    public abstract String getViewMessage();
 
 }

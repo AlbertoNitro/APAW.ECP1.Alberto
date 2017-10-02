@@ -28,6 +28,11 @@ public class DriverComposite extends DriverComponent {
     }
 
     @Override
+    public int size() {
+        return driverComponentList.size();
+    }
+
+    @Override
     public void view() {
         System.out.println(this.name);
     }
@@ -35,6 +40,11 @@ public class DriverComposite extends DriverComponent {
     @Override
     public boolean isComposite() {
         return true;
+    }
+    
+    @Override
+    public String getViewMessage() {
+        return this.name;
     }
 
 }
