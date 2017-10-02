@@ -46,17 +46,27 @@ public class DriverComponentTest {
     }
 
     @Test
-    public void testAddDriver() {
+    public void testAddDriverComposite() {
         assertEquals(1, this.driverComponent6.size());
         this.driverComponent6.addDriver(this.driverComponent3);
         assertEquals(2, this.driverComponent6.size());
     }
 
     @Test
-    public void testDeleteDriver() {
+    public void testDeleteDriverComposite() {
         assertEquals(1, this.driverComponent6.size());
         this.driverComponent6.deleteDriver(driverComponent2);
         assertEquals(0, this.driverComponent6.size());
+    }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void testAddDriverLeaf() {
+        this.driverComponent3.addDriver(this.driverComponent3);
+    }
+
+    @Test(expected = UnsupportedOperationException.class)
+    public void testDeleteDriverLeaf() {
+        this.driverComponent3.deleteDriver(driverComponent2);
     }
 
     @Test
