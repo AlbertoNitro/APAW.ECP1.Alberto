@@ -9,7 +9,7 @@ import entity.Car;
 
 public class CarTest {
     private Car car;
-    
+
     @Before
     public void before() {
         this.car = new Car(1);

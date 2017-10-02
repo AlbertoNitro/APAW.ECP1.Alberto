@@ -36,6 +36,16 @@ public class DriverComponentTest {
     }
 
     @Test
+    public void testSizeLeaf() {
+        assertEquals(0, this.driverComponent3.size());
+    }
+
+    @Test
+    public void testSizeComposite() {
+        assertEquals(2, this.driverComponent5.size());
+    }
+
+    @Test
     public void testAddDriver() {
         assertEquals(1, this.driverComponent6.size());
         this.driverComponent6.addDriver(this.driverComponent3);

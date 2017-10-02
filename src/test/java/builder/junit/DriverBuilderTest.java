@@ -29,7 +29,7 @@ public class DriverBuilderTest {
         assertEquals(car, driver.getCar());
         assertEquals(Level.BEGINNER, driver.getLevel());
     }
-    
+
     @Test
     public void testDriverBuilder() {
         this.driver = new DriverBuilder().id(4).car(car).build();
@@ -42,7 +42,7 @@ public class DriverBuilderTest {
     public void testId() {
         assertEquals(1, driver.getId());
     }
-    
+
     @Test
     public void testPhone() {
         assertEquals(665129265, driver.getPhone());
