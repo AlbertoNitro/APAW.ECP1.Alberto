@@ -1,5 +1,7 @@
 package patterns.entity;
 
 public enum Level {
-    BEGINNER, NORMAL, EXPERT
+    BEGINNER, 
+    NORMAL, 
+    EXPERT
 }
