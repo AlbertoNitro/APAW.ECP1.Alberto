@@ -28,15 +28,10 @@ public class FactoryDriverTest {
         factoryDriver.almacenate(this.driver);
     }
 
-    @SuppressWarnings("unused")
-    @Test
+    @Test(expected = UnsupportedOperationException.class)
     public void testAlmacenate() {
         assertTrue(factoryDriver.search(this.driver));
-        try {
-            this.driver = new DriverBuilder().id(1).car(this.car).build();
-        } catch (UnsupportedOperationException e) {
-            assertTrue(true);
-        }
+        factoryDriver.almacenate(this.driver);
     }
 
     @Test
