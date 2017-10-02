@@ -14,12 +14,12 @@ public class DriverLeaf extends DriverComponent {
 
     @Override
     public void addDriver(DriverComponent driverComponent) {
-        // Do nothing
+        throw new UnsupportedOperationException("Operación no soportada");
     }
 
     @Override
     public void deleteDriver(DriverComponent driverComponent) {
-        // Do nothing
+        throw new UnsupportedOperationException("Operación no soportada");
     }
 
     @Override
