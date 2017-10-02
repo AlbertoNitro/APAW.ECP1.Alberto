@@ -14,7 +14,7 @@ public class DriverLeaf extends DriverComponent {
 
     @Override
     public void addDriver(DriverComponent driverComponent) {
-        // Do nothing 
+        // Do nothing
     }
 
     @Override
@@ -33,10 +33,10 @@ public class DriverLeaf extends DriverComponent {
     }
 
     @Override
-    public int size() {     
+    public int size() {
         return 0;
     }
-    
+
     @Override
     public String getViewMessage() {
         return String.valueOf(this.driver.getId());

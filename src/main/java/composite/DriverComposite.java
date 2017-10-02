@@ -11,7 +11,7 @@ public class DriverComposite extends DriverComponent {
     public DriverComposite(String name) {
         super();
         assert name != null;
-        this.driverComponentList = new ArrayList<DriverComponent>();
+        this.driverComponentList = new ArrayList<>();
         this.name = name;
     }
 
@@ -41,7 +41,7 @@ public class DriverComposite extends DriverComponent {
     public boolean isComposite() {
         return true;
     }
-    
+
     @Override
     public String getViewMessage() {
         return this.name;
