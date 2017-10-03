@@ -1,6 +1,6 @@
 package patterns.strategy;
 
-public class BoldMarkerStrategy extends MarkerStrategy {
+public class BoldMarkerStrategy implements MarkerStrategy {
 
     @Override
     public String markerText(String input) {
