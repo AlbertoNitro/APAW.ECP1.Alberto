@@ -2,7 +2,7 @@ package patterns.composite;
 
 import patterns.entity.Driver;
 
-public class DriverLeaf extends DriverComponent {
+public class DriverLeaf implements DriverComponent {
 
     private Driver driver;
 
@@ -23,8 +23,8 @@ public class DriverLeaf extends DriverComponent {
     }
 
     @Override
-    public void view() {
-        System.out.println(this.driver.getId());
+    public String view() {
+        return this.driver.getId()+"";
     }
 
     @Override
@@ -35,11 +35,6 @@ public class DriverLeaf extends DriverComponent {
     @Override
     public int size() {
         return 0;
-    }
-
-    @Override
-    public String getViewMessage() {
-        return String.valueOf(this.driver.getId());
     }
 
 }

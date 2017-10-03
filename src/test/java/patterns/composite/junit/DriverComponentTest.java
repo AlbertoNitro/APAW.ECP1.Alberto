@@ -71,14 +71,12 @@ public class DriverComponentTest {
 
     @Test
     public void testViewComposite() {
-        this.driverComponent5.view();
-        assertEquals("Conductores Expertos", this.driverComponent5.getViewMessage());
+        assertEquals("Conductores Expertos", this.driverComponent5.view());
     }
 
     @Test
     public void testViewLeaf() {
-        this.driverComponent3.view();
-        assertEquals("3", this.driverComponent3.getViewMessage());
+        assertEquals("3", this.driverComponent3.view());
     }
 
     @Test

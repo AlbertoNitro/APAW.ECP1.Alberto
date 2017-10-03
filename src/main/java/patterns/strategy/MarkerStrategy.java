@@ -1,5 +1,5 @@
 package patterns.strategy;
 
-public abstract class MarkerStrategy {
-    public abstract String markerText(String input);
+public interface MarkerStrategy {
+    public String markerText(String input);
 }

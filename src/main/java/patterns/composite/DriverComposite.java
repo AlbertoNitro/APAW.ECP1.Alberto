@@ -3,7 +3,7 @@ package patterns.composite;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DriverComposite extends DriverComponent {
+public class DriverComposite implements DriverComponent {
     private String name;
 
     private List<DriverComponent> driverComponentList;
@@ -33,18 +33,13 @@ public class DriverComposite extends DriverComponent {
     }
 
     @Override
-    public void view() {
-        System.out.println(this.name);
+    public String view() {
+        return this.name;
     }
 
     @Override
     public boolean isComposite() {
         return true;
-    }
-
-    @Override
-    public String getViewMessage() {
-        return this.name;
     }
 
 }
